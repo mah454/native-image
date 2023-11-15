@@ -1,13 +1,9 @@
 package ir.moke.ni;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class DbManager {
-
-    private static Connection connection;
+    private static final Connection connection;
 
     static {
         try {
@@ -20,7 +16,7 @@ public class DbManager {
 
     public static void createTable() {
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("create table if not exists book(id int,name varchar(255));");
+            PreparedStatement preparedStatement = connection.prepareStatement("create table if not exists book(id int auto_increment,name varchar(255));");
             preparedStatement.execute();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -29,12 +25,26 @@ public class DbManager {
 
     public static void insert(Book book) {
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("insert into book(id,name) values (?,?);");
-            preparedStatement.setInt(1,book.id());
-            preparedStatement.setString(2,book.name());
+            PreparedStatement preparedStatement = connection.prepareStatement("insert into book(name) values (?);");
+            preparedStatement.setString(1, book.name());
             preparedStatement.execute();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static Book select() {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("select * from book");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                return new Book(id, name);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
     }
 }
