@@ -45,7 +45,7 @@
                 <configuration>
                     <imageName>output</imageName>
                     <mainClass>ir.moke.ni.MainClass</mainClass>
-                    <buildArgs>-H:IncludeResources=.*so$</buildArgs>
+                    <buildArgs>-H:IncludeResources=.*so$ -H:+UnlockExperimentalVMOptions</buildArgs>
                 </configuration>
             </plugin>
         </plugins>
