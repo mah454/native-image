@@ -12,6 +12,7 @@
         <module>02-with-dependencies</module>
         <module>03-reflection</module>
         <module>04-reflection-2</module>
+        <module>05-jni</module>
     </modules>
     <dependencyManagement>
         <dependencies>
@@ -67,8 +68,12 @@
                         </execution>
                     </executions>
                 </plugin>
+                <plugin>
+                    <artifactId>exec-maven-plugin</artifactId>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <version>3.1.0</version>
+                </plugin>
             </plugins>
-
         </pluginManagement>
     </build>
 </project>
