@@ -13,9 +13,15 @@
         <module>03-reflection</module>
         <module>04-reflection-2</module>
         <module>05-jni</module>
+        <module>06-jni-2</module>
     </modules>
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>ir.moke</groupId>
+                <artifactId>jsysbox</artifactId>
+                <version>0.4</version>
+            </dependency>
             <dependency>
                 <groupId>com.h2database</groupId>
                 <artifactId>h2</artifactId>
