@@ -14,6 +14,7 @@
         <module>04-reflection-2</module>
         <module>05-jni</module>
         <module>06-jni-2</module>
+        <module>07-shared-object</module>
     </modules>
     <dependencyManagement>
         <dependencies>
