@@ -15,6 +15,7 @@
         <module>05-jni</module>
         <module>06-jni-2</module>
         <module>07-shared-object</module>
+        <module>08-static-link</module>
     </modules>
     <dependencyManagement>
         <dependencies>
