@@ -17,6 +17,7 @@
         <module>07-shared-object</module>
         <module>08-static-link</module>
         <module>09-logback</module>
+        <module>10-logback-programmatically</module>
     </modules>
     <dependencyManagement>
         <dependencies>

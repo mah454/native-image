@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>ir.moke</groupId>
+        <artifactId>native-image</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <artifactId>10-logback-programmatically</artifactId>
+    <version>1.0</version>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.graalvm.buildtools</groupId>
+                <artifactId>native-maven-plugin</artifactId>
+                <configuration>
+                    <imageName>output</imageName>
+                    <mainClass>ir.moke.ni.MainClass</mainClass>
+                    <buildArgs>
+                        <buildArgs>--initialize-at-build-time=ch.qos.logback,org.slf4j</buildArgs>
+                        <buildArgs>-H:ReflectionConfigurationFiles=${project.basedir}/src/main/resources/META-INF/reflection-config.json</buildArgs>
+                        <buildArg>-H:+UnlockExperimentalVMOptions</buildArg>
+                        <buildArg>-H:Log=registerResource:5</buildArg>
+                        <buildArg>--initialize-at-build-time=ch.qos.logback,org.slf4j</buildArg>
+                    </buildArgs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
