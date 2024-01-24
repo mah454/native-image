@@ -38,7 +38,7 @@
                     <mainClass>ir.moke.ni.MainClass</mainClass>
                     <buildArgs>
                         <buildArgs>--initialize-at-build-time=ch.qos.logback,org.slf4j</buildArgs>
-                        <buildArgs>-H:ReflectionConfigurationFiles=09-logback/src/main/resources/META-INF/reflection-config.json</buildArgs>
+                        <buildArgs>-H:ReflectionConfigurationFiles=${project.basedir}/src/main/resources/META-INF/reflection-config.json</buildArgs>
                         <buildArg>-H:IncludeResources=logback.xml</buildArg>
                         <buildArg>-H:+UnlockExperimentalVMOptions</buildArg>
                         <buildArg>-H:Log=registerResource:5</buildArg>
