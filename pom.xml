@@ -18,6 +18,7 @@
         <module>08-static-link</module>
         <module>09-logback</module>
         <module>10-logback-programmatically</module>
+        <module>11-gson</module>
     </modules>
     <dependencyManagement>
         <dependencies>
