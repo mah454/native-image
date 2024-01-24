@@ -10,7 +10,7 @@
         <version>1.0</version>
     </parent>
 
-    <artifactId>04-reflection-2</artifactId>
+    <artifactId>04-h2</artifactId>
     <version>1.0</version>
 
     <dependencies>

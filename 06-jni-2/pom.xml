@@ -16,7 +16,8 @@
     <dependencies>
         <dependency>
             <groupId>ir.moke</groupId>
-            <artifactId>jsysbox</artifactId>
+            <artifactId>05-jni</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 
