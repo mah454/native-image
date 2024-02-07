@@ -1,4 +1,4 @@
-CC=clang++-11
+CC=clang++
 CFLAGS=-Wall -fPIC -I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/linux -lstdc++
 BUILD_DIR=src/main/clib/build
 SOURCE_DIR=src/main/clib
