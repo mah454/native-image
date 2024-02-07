@@ -19,6 +19,7 @@
         <module>09-logback</module>
         <module>10-logback-programmatically</module>
         <module>11-gson</module>
+        <module>12-web-resource</module>
     </modules>
     <dependencyManagement>
         <dependencies>
